@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,14 @@ public class EnemyShot : MonoBehaviour
     [SerializeField] private int seconds;
 
     void Start()
+    {
+        System.Random random = new System.Random();
+        float secondsBeforeStarting = (float)(random.NextDouble() * 5f);
+
+        Invoke("StartFire", secondsBeforeStarting);
+    }
+
+    private void StartFire()
     {
         StartCoroutine(FireEveryFewSeconds());
     }
