@@ -134,4 +134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 5
-  damage: 0
+  damage: 2
