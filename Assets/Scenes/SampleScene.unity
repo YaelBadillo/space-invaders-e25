@@ -313,6 +313,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &256438239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 256438240}
+  m_Layer: 0
+  m_Name: Enemy Shot Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &256438240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256438239}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 396064838}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &275586621
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +440,7 @@ GameObject:
   - component: {fileID: 396064841}
   - component: {fileID: 396064840}
   - component: {fileID: 396064839}
+  - component: {fileID: 396064842}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -430,6 +462,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 177252878}
+  - {fileID: 256438240}
   m_Father: {fileID: 1066169627}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &396064839
@@ -517,6 +550,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &396064842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396064837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d990b5daac1e5dfa8c865e06070934d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotHandler: {fileID: 256438240}
+  bullet: {fileID: 6861898672234932951, guid: bfd30a21a3db48177b675a26fb0dc7ff, type: 3}
+  seconds: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
