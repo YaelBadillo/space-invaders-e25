@@ -43,12 +43,12 @@ public class Player : MonoBehaviour
         life -= damage;
         if (life <= 0f)
         {
-            Destroy(gameObject);
             ToRevive();
+            lives--;
         }
     }
 
     private void ToRevive() {
-        Instantiate(gameObject);
+        transform.position = new Vector3(0f, transform.position.y);
     }
 }
