@@ -55,17 +55,22 @@
     <Analyzer Include="/home/yxel/Unity/Hub/Editor/2022.3.8f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/Obstacle.cs" />
-    <Compile Include="Assets/Scripts/EnemyShot.cs" />
     <Compile Include="Assets/Scripts/LoopingBackgroundImage.cs" />
-    <Compile Include="Assets/Scripts/Bullet.cs" />
-    <Compile Include="Assets/Scripts/EnemyBullet.cs" />
-    <Compile Include="Assets/Scripts/Enemy.cs" />
-    <Compile Include="Assets/Scripts/SinusoidalMovementX.cs" />
-    <Compile Include="Assets/Scripts/PlayerShot.cs" />
-    <Compile Include="Assets/Scripts/Player.cs" />
-    <Compile Include="Assets/Scripts/MoveObject.cs" />
+    <Compile Include="Assets/Scripts/Obstacle/Obstacle.cs" />
+    <Compile Include="Assets/Scripts/Enemies/BaseEnemy/EnemyShot.cs" />
+    <Compile Include="Assets/Scripts/Shared/Bullet.cs" />
+    <Compile Include="Assets/Scripts/Player/PlayerShot.cs" />
+    <Compile Include="Assets/Scripts/Player/PlayerBullet.cs" />
+    <Compile Include="Assets/Scripts/Shared/Shot.cs" />
+    <Compile Include="Assets/Scripts/Enemies/BaseEnemy/EnemyBullet.cs" />
+    <Compile Include="Assets/Scripts/Enemies/SinusoidalMovementX.cs" />
+    <Compile Include="Assets/Scripts/Player/Player.cs" />
+    <Compile Include="Assets/Scripts/Shared/Entity.cs" />
+    <Compile Include="Assets/Scripts/Enemies/VerticalMovement.cs" />
+    <Compile Include="Assets/Scripts/Enemies/BaseEnemy/Enemy.cs" />
+    <Compile Include="Assets/Scripts/Shared/Constants/EntityTags.cs" />
     <Compile Include="Assets/InputSystem/PlayerActions.cs" />
+    <Compile Include="Assets/Scripts/Player/PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

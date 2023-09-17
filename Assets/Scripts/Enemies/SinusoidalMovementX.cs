@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SinusoidalMovementX : MonoBehaviour
 {
-    public float cycleAnchor;
-    public float frequency;
-    public float delay;
+    [SerializeField] private float cycleAnchor;
+    [SerializeField] private float frequency;
+    [SerializeField] private float delay;
 
-    float xPosition, sinCounter, xSin;
+    private float xPosition, sinCounter, xSin;
 
     void Start()
     {
