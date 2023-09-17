@@ -55,7 +55,6 @@
     <Analyzer Include="/home/yxel/Unity/Hub/Editor/2022.3.8f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/Enemies/MoveObject.cs" />
     <Compile Include="Assets/Scripts/LoopingBackgroundImage.cs" />
     <Compile Include="Assets/Scripts/Obstacle/Obstacle.cs" />
     <Compile Include="Assets/Scripts/Bullet.cs" />
@@ -67,6 +66,7 @@
     <Compile Include="Assets/Scripts/Enemies/BaseEnemy/EnemyBullet.cs" />
     <Compile Include="Assets/Scripts/Enemies/SinusoidalMovementX.cs" />
     <Compile Include="Assets/Scripts/Player/Player.cs" />
+    <Compile Include="Assets/Scripts/Enemies/VerticalMovement.cs" />
     <Compile Include="Assets/Scripts/Enemies/BaseEnemy/Enemy.cs" />
     <Compile Include="Assets/InputSystem/PlayerActions.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerMovement.cs" />

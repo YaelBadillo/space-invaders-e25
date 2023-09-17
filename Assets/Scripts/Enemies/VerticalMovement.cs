@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
-public class MoveObject : MonoBehaviour
+public class VerticalMovement : MonoBehaviour
 {
     public Vector2 destination;
     public float velocity = 5.0f;
