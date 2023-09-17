@@ -6,7 +6,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float life;
-    [SerializeField] private float lives;
+    [SerializeField] private int lives;
+    [SerializeField] private GameObject liveSprites;
     [SerializeField] private float speed;
     private PlayerActions playerActions;
     private Rigidbody2D playerRigidbody;
@@ -45,6 +46,8 @@ public class Player : MonoBehaviour
         {
             ToRevive();
             lives--;
+            Transform live = liveSprites.transform.GetChild(0);
+            Destroy(live.gameObject);
         }
     }
 
