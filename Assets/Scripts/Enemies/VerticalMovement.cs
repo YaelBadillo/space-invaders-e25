@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class VerticalMovement : MonoBehaviour
 {
-    public Vector2 destination;
-    public float velocity = 5.0f;
-    Rigidbody2D objectRigidbody2D;
-    bool hasArrived = false;
+    [SerializeField] private Vector2 destination;
+    [SerializeField] private float velocity = 5.0f;
+    private Rigidbody2D objectRigidbody2D;
+    private bool hasArrived = false;
 
     void Start()
     {
