@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Entity
 {
-    [SerializeField] private float life;
-
-    public void TakeDamage(float damage)
+    [SerializeField] private float life = 2f;
+    protected override float Existence
     {
-        life -= damage;
-        if (life <= 0f)
-        {
-            Destroy(gameObject);
-        }
+        get { return life; }
+        set { life = value; }
     }
 }

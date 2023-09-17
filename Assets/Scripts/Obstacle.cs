@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class Obstacle : Entity
 {
-    [SerializeField] private float endurance;
+    [SerializeField] private float endurance = 6f;
 
-    public void TakeDamage(float damage)
+    protected override float Existence
     {
-        endurance -= damage;
-        if (endurance <= 0f)
-        {
-            Destroy(gameObject);
-        }
+        get { return endurance; }
+        set { endurance = value; }
     }
 }
