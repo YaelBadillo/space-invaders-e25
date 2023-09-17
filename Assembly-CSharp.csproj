@@ -58,7 +58,6 @@
     <Compile Include="Assets/Scripts/Obstacle.cs" />
     <Compile Include="Assets/Scripts/EnemyShot.cs" />
     <Compile Include="Assets/Scripts/LoopingBackgroundImage.cs" />
-    <Compile Include="Assets/Scripts/Bullet.cs" />
     <Compile Include="Assets/Scripts/EnemyBullet.cs" />
     <Compile Include="Assets/Scripts/Enemy.cs" />
     <Compile Include="Assets/Scripts/SinusoidalMovementX.cs" />
@@ -66,6 +65,7 @@
     <Compile Include="Assets/Scripts/Player.cs" />
     <Compile Include="Assets/Scripts/MoveObject.cs" />
     <Compile Include="Assets/InputSystem/PlayerActions.cs" />
+    <Compile Include="Assets/Scripts/PlayerBullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
