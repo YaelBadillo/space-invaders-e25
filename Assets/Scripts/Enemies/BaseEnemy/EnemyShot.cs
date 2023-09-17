@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyShot : Shot
@@ -12,7 +10,7 @@ public class EnemyShot : Shot
         System.Random random = new System.Random();
         float secondsBeforeStarting = (float)(random.NextDouble() * 5f);
 
-        Invoke("StartFire", secondsBeforeStarting);
+        Invoke(nameof(StartFire), secondsBeforeStarting);
     }
 
     private void StartFire()
