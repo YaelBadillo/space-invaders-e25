@@ -6,13 +6,13 @@ public class EnemyBullet : Bullet
 
     public override void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(EntityTags.Player))
         {
             Destroy(gameObject);
             other.GetComponent<Player>().TakeDamage(damage);
         }
 
-        if (other.CompareTag("Obstacle"))
+        if (other.CompareTag(EntityTags.Obstacle))
         {
             Destroy(gameObject);
             other.GetComponent<Obstacle>().TakeDamage(damage);
