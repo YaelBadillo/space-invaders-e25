@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class EnemyBullet : Bullet
 {
-    [SerializeField] private float velocity;
-    [SerializeField] private float damage;
+    protected override Vector2 Direction => Vector2.down;
 
-    void Update()
-    {
-        transform.Translate(Vector2.down * velocity * Time.deltaTime);
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
+    public override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
