@@ -16,15 +16,19 @@ public class VerticalMovement : MonoBehaviour
     {
         if (!hasArrived)
         {
-            Vector2 direction = (destination - objectRigidbody2D.position).normalized;
+            Move();
+        }
+    }
 
-            objectRigidbody2D.velocity = direction * velocity;
-            if (Vector2.Distance(objectRigidbody2D.position, destination) < 0.1f)
-            {
-                hasArrived = true;
-                objectRigidbody2D.velocity = Vector2.zero;
-            }
+    private void Move()
+    {
+        Vector2 direction = (destination - objectRigidbody2D.position).normalized;
 
+        objectRigidbody2D.velocity = direction * velocity;
+        if (Vector2.Distance(objectRigidbody2D.position, destination) < 0.1f)
+        {
+            hasArrived = true;
+            objectRigidbody2D.velocity = Vector2.zero;
         }
     }
 }
