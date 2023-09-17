@@ -2,21 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShot : MonoBehaviour
+public class PlayerShot : Shot
 {
-    [SerializeField] private Transform shotHandler;
-    [SerializeField] private GameObject bullet;
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Shot();
+            Shoot();
         }
-    }
-
-    private void Shot()
-    {
-        Instantiate(bullet, shotHandler.position, shotHandler.rotation);
     }
 }

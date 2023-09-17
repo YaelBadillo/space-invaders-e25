@@ -3,10 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShot : MonoBehaviour
+public class EnemyShot : Shot
 {
-    [SerializeField] private Transform shotHandler;
-    [SerializeField] private GameObject bullet;
     [SerializeField] private int seconds;
 
     void Start()
@@ -26,13 +24,8 @@ public class EnemyShot : MonoBehaviour
     {
         while (true)
         {
-            Shot();
+            Shoot();
             yield return new WaitForSeconds(seconds);
         }
-    }
-
-    private void Shot()
-    {
-        Instantiate(bullet, shotHandler.position, shotHandler.rotation);
     }
 }
