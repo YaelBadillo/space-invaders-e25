@@ -12,4 +12,10 @@ public abstract class Bullet : MonoBehaviour
     }
 
     public abstract void OnTriggerEnter2D(Collider2D other);
+
+    public void Collides(Collider2D other)
+    {
+        Destroy(gameObject);
+        other.GetComponent<Entity>().TakeDamage(damage);
+    }
 }

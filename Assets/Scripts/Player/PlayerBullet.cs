@@ -8,8 +8,7 @@ public class PlayerBullet : Bullet
     {
         if (other.CompareTag(EntityTags.Enemy))
         {
-            Destroy(gameObject);
-            other.GetComponent<Enemy>().TakeDamage(damage);
+            Collides(other);
         }
     }
 }
