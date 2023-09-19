@@ -8,14 +8,12 @@ public class EnemyBullet : Bullet
     {
         if (other.CompareTag(EntityTags.Player))
         {
-            Destroy(gameObject);
-            other.GetComponent<Player>().TakeDamage(damage);
+            Collides(other);
         }
 
         if (other.CompareTag(EntityTags.Obstacle))
         {
-            Destroy(gameObject);
-            other.GetComponent<Obstacle>().TakeDamage(damage);
+            Collides(other);
         }
     }
 }
