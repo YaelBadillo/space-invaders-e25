@@ -55,6 +55,7 @@
     <Analyzer Include="/home/yxel/Unity/Hub/Editor/2022.3.8f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/GameManager/GameManager.cs" />
     <Compile Include="Assets/Scripts/LoopingBackgroundImage.cs" />
     <Compile Include="Assets/Scripts/Obstacle/Obstacle.cs" />
     <Compile Include="Assets/Scripts/MainMenu.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Assets/Scripts/Player/DeathManager.cs" />
     <Compile Include="Assets/Scripts/Shared/Constants/EntityTags.cs" />
     <Compile Include="Assets/Scripts/GameOverMenu.cs" />
+    <Compile Include="Assets/Scripts/Menus/PauseMenu.cs" />
     <Compile Include="Assets/InputSystem/PlayerActions.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerMovement.cs" />
   </ItemGroup>

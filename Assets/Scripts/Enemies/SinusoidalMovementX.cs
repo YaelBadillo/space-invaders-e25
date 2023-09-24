@@ -15,6 +15,11 @@ public class SinusoidalMovementX : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f)
+        {
+            return;
+        }
+
         if (delay > 0)
         {
             delay--;
