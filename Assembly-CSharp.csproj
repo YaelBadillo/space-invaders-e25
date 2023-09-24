@@ -73,8 +73,8 @@
     <Compile Include="Assets/Scripts/Enemies/BaseEnemy/Enemy.cs" />
     <Compile Include="Assets/Scripts/Player/DeathManager.cs" />
     <Compile Include="Assets/Scripts/Shared/Constants/EntityTags.cs" />
-    <Compile Include="Assets/Scripts/PauseMenu.cs" />
     <Compile Include="Assets/Scripts/GameOverMenu.cs" />
+    <Compile Include="Assets/Scripts/Menus/PauseMenu.cs" />
     <Compile Include="Assets/InputSystem/PlayerActions.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerMovement.cs" />
   </ItemGroup>
