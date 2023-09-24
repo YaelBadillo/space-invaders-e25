@@ -15,5 +15,19 @@ public class PauseMenu : MonoBehaviour
     private void OpenCloseMenu()
     {
         pauseMenu.SetActive(!pauseMenu.activeSelf);
+        PauseResumeGame();
+    }
+
+    private void PauseResumeGame()
+    {
+        if (pauseMenu.activeSelf)
+        {
+            GetComponent<GameManager>().Pause();
+        }
+        else
+        {
+
+            GetComponent<GameManager>().Resume();
+        }
     }
 }
