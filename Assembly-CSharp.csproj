@@ -59,6 +59,7 @@
     <Compile Include="Assets/Scripts/Obstacle/Obstacle.cs" />
     <Compile Include="Assets/Scripts/MainMenu.cs" />
     <Compile Include="Assets/Scripts/Enemies/BaseEnemy/EnemyShot.cs" />
+    <Compile Include="Assets/Scripts/Player/LivesManager.cs" />
     <Compile Include="Assets/Scripts/Shared/Bullet.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerShot.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerBullet.cs" />
@@ -69,7 +70,9 @@
     <Compile Include="Assets/Scripts/Shared/Entity.cs" />
     <Compile Include="Assets/Scripts/Enemies/VerticalMovement.cs" />
     <Compile Include="Assets/Scripts/Enemies/BaseEnemy/Enemy.cs" />
+    <Compile Include="Assets/Scripts/Player/DeathManager.cs" />
     <Compile Include="Assets/Scripts/Shared/Constants/EntityTags.cs" />
+    <Compile Include="Assets/Scripts/GameOverMenu.cs" />
     <Compile Include="Assets/InputSystem/PlayerActions.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerMovement.cs" />
   </ItemGroup>

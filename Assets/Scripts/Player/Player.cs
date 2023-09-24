@@ -3,12 +3,16 @@ using UnityEngine;
 public class Player : Entity
 {
     [SerializeField] private float life = 2f;
-    [SerializeField] private int lives = 3;
-    [SerializeField] private GameObject liveSprites;
     protected override float Existence
     {
         get { return life; }
         set { life = value; }
+    }
+    private LivesManager livesManager;
+
+    void Start()
+    {
+        livesManager = GetComponent<LivesManager>();
     }
 
     public override void TakeDamage(float damage)
@@ -16,15 +20,14 @@ public class Player : Entity
         life -= damage;
         if (life <= 0f)
         {
-            ToRevive();
-            lives--;
-            Transform live = liveSprites.transform.GetChild(0);
-            Destroy(live.gameObject);
+            livesManager.LoseALife();
+        }
+
+        if (livesManager.Lives < 0)
+        {
+            GetComponent<DeathManager>().Death();
         }
     }
 
-    private void ToRevive()
-    {
-        transform.position = new Vector3(0f, transform.position.y);
-    }
+
 }
