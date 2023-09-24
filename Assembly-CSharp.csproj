@@ -59,6 +59,7 @@
     <Compile Include="Assets/Scripts/Obstacle/Obstacle.cs" />
     <Compile Include="Assets/Scripts/MainMenu.cs" />
     <Compile Include="Assets/Scripts/Enemies/BaseEnemy/EnemyShot.cs" />
+    <Compile Include="Assets/Scripts/Player/LivesManager.cs" />
     <Compile Include="Assets/Scripts/Shared/Bullet.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerShot.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerBullet.cs" />
