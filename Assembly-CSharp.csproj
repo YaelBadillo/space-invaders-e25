@@ -69,6 +69,7 @@
     <Compile Include="Assets/Scripts/Shared/Entity.cs" />
     <Compile Include="Assets/Scripts/Enemies/VerticalMovement.cs" />
     <Compile Include="Assets/Scripts/Enemies/BaseEnemy/Enemy.cs" />
+    <Compile Include="Assets/Scripts/Player/DeathManager.cs" />
     <Compile Include="Assets/Scripts/Shared/Constants/EntityTags.cs" />
     <Compile Include="Assets/Scripts/GameOverMenu.cs" />
     <Compile Include="Assets/InputSystem/PlayerActions.cs" />

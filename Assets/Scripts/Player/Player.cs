@@ -16,8 +16,22 @@ public class Player : Entity
         life -= damage;
         if (life <= 0f)
         {
-            ToRevive();
-            lives--;
+            LoseALife();
+        }
+
+        if (lives < 0)
+        {
+            GetComponent<DeathManager>().Death();
+        }
+    }
+
+    private void LoseALife()
+    {
+        ToRevive();
+        lives--;
+        if (liveSprites.transform.childCount > 0)
+        {
+
             Transform live = liveSprites.transform.GetChild(0);
             Destroy(live.gameObject);
         }
