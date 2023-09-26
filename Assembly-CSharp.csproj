@@ -65,6 +65,7 @@
     <Compile Include="Assets/Scripts/Player/PlayerShot.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerBullet.cs" />
     <Compile Include="Assets/Scripts/Shared/Shot.cs" />
+    <Compile Include="Assets/Scripts/Menus/GameMenuActions.cs" />
     <Compile Include="Assets/Scripts/Enemies/BaseEnemy/EnemyBullet.cs" />
     <Compile Include="Assets/Scripts/Enemies/SinusoidalMovementX.cs" />
     <Compile Include="Assets/Scripts/Player/Player.cs" />
@@ -76,7 +77,6 @@
     <Compile Include="Assets/Scripts/Menus/PauseMenu.cs" />
     <Compile Include="Assets/InputSystem/PlayerActions.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerMovement.cs" />
-    <Compile Include="Assets/Scripts/Menus/GameOverMenuActions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
