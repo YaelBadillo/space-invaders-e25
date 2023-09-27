@@ -5,6 +5,7 @@ public class GameMenuActions : MonoBehaviour
 {
     public void Restart()
     {
+        TimeManager.ResumeTimeScale();
         int gameScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(gameScene);
     }
