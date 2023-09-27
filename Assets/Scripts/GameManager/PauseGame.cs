@@ -19,13 +19,13 @@ public class PauseGame : MonoBehaviour
 
     public void Pause()
     {
-        Time.timeScale = 0f;
+        TimeManager.StopTimeScale();
         _isPaused = true;
     }
 
     public void Resume()
     {
-        Time.timeScale = 1f;
+        TimeManager.ResumeTimeScale();
         _isPaused = false;
     }
 }
