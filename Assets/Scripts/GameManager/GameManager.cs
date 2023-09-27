@@ -2,18 +2,21 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private bool _isPaused = false;
-    public bool IsPaused => _isPaused;
+    PauseGame pauseGame;
+    PauseMenuLauncher pauseMenuLauncher;
 
-    public void Pause()
+    void Start()
     {
-        Time.timeScale = 0f;
-        _isPaused = true;
+        pauseGame = GetComponent<PauseGame>();
+        pauseMenuLauncher = GetComponent<PauseMenuLauncher>();
     }
 
-    public void Resume()
+    void Update()
     {
-        Time.timeScale = 1f;
-        _isPaused = false;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseGame.PauseResume();
+            pauseMenuLauncher.OpenCloseMenu();
+        }
     }
 }
