@@ -59,6 +59,7 @@
     <Compile Include="Assets/Scripts/LoopingBackgroundImage.cs" />
     <Compile Include="Assets/Scripts/Obstacle/Obstacle.cs" />
     <Compile Include="Assets/Scripts/GameManager/PauseMenuLauncher.cs" />
+    <Compile Include="Assets/Scripts/Shared/Constants/SceneBuildIndexes.cs" />
     <Compile Include="Assets/Scripts/Menus/MainMenuActions.cs" />
     <Compile Include="Assets/Scripts/Enemies/BaseEnemy/EnemyShot.cs" />
     <Compile Include="Assets/Scripts/Player/LivesManager.cs" />
@@ -77,9 +78,9 @@
     <Compile Include="Assets/Scripts/Enemies/BaseEnemy/Enemy.cs" />
     <Compile Include="Assets/Scripts/Player/DeathManager.cs" />
     <Compile Include="Assets/Scripts/Shared/Constants/EntityTags.cs" />
-    <Compile Include="Assets/Scripts/Shared/Constants/Scenes.cs" />
     <Compile Include="Assets/InputSystem/PlayerActions.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerMovement.cs" />
+    <Compile Include="Assets/Scripts/Menus/GameLauncher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

@@ -5971,8 +5971,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1423207387}
-        m_TargetAssemblyTypeName: GameMenuActions, Assembly-CSharp
-        m_MethodName: Restart
+        m_TargetAssemblyTypeName: Actions, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8112,8 +8112,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 298746275}
-        m_TargetAssemblyTypeName: GameMenuActions, Assembly-CSharp
-        m_MethodName: Restart
+        m_TargetAssemblyTypeName: Actions, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

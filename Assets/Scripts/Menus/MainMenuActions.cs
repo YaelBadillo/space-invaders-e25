@@ -1,15 +1,8 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : GameLauncher
 {
-    public void Play()
-    {
-        TimeManager.ResumeTimeScale();
-
-        int gameScene = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadScene(gameScene);
-    }
+    protected override int GameSceneName => SceneBuildIndexes.GameScene;
 
     public void Quit()
     {
