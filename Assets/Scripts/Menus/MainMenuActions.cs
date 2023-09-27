@@ -5,7 +5,10 @@ public class MainMenu : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        TimeManager.ResumeTimeScale();
+
+        int gameScene = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(gameScene);
     }
 
     public void Quit()
