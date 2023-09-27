@@ -1,18 +1,11 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameMenuActions : MonoBehaviour
+public class GameMenuActions : GameLauncher
 {
-    public void Restart()
-    {
-        TimeManager.ResumeTimeScale();
-        int gameScene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(gameScene);
-    }
+    protected override int GameSceneName => SceneBuildIndexes.GameScene;
 
     public void BackToHome()
     {
-        int homeScene = SceneManager.GetActiveScene().buildIndex - 1;
-        SceneManager.LoadScene(homeScene);
+        SceneManager.LoadScene(SceneBuildIndexes.GameMenu);
     }
 }
