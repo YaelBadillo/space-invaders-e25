@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 7803819250793906690}
   - component: {fileID: 171770043613487946}
   - component: {fileID: 6450759649217894297}
+  - component: {fileID: 7814841049608054765}
   m_Layer: 0
   m_Name: Ant
   m_TagString: Enemy
@@ -205,6 +206,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0
+--- !u!114 &7814841049608054765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6349381160443981880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d990b5daac1e5dfa8c865e06070934d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotHandler: {fileID: 3582127908752448123}
+  bullet: {fileID: 6861898672234932951, guid: bfd30a21a3db48177b675a26fb0dc7ff, type: 3}
+  seconds: 5
 --- !u!1 &8691026473582329166
 GameObject:
   m_ObjectHideFlags: 0

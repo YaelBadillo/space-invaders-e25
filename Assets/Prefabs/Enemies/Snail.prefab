@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 382336296854141752}
   - component: {fileID: 3655011741968940245}
   - component: {fileID: 463799129178351191}
+  - component: {fileID: 7359588485310470660}
   m_Layer: 0
   m_Name: Snail
   m_TagString: Enemy
@@ -121,6 +122,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0
+--- !u!114 &7359588485310470660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4498850584193232975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d990b5daac1e5dfa8c865e06070934d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotHandler: {fileID: 7883253041670883178}
+  bullet: {fileID: 6861898672234932951, guid: bfd30a21a3db48177b675a26fb0dc7ff, type: 3}
+  seconds: 5
 --- !u!1 &4513482636127177118
 GameObject:
   m_ObjectHideFlags: 0
