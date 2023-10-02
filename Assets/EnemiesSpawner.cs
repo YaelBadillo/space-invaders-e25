@@ -13,10 +13,34 @@ public class EnemiesSpawner : MonoBehaviour
     [SerializeField]
     GameObject enemiesContainer;
     float initialX = -4f;
-    float initialY = 0f;
-    float initialZ = 0f;
+    readonly float initialY = 0f;
+    readonly float initialZ = 0f;
 
     void Start()
+    {
+        GenerateEnemies();
+    }
+
+    void Update()
+    {
+        bool hasChildren = false;
+        foreach (Transform enemyRow in enemiesContainer.transform)
+        {
+            //Debug.Log(enemyRow.name);
+            if (enemyRow.childCount > 0)
+            {
+                hasChildren = true;
+                break;
+            }
+        }
+
+        if (!hasChildren)
+        {
+            GenerateEnemies();
+        }
+    }
+
+    void GenerateEnemies()
     {
         int childCount = enemiesContainer.transform.childCount;
         for (int numberOfEnemyRow = 0; numberOfEnemyRow < childCount; numberOfEnemyRow++)
@@ -50,11 +74,5 @@ public class EnemiesSpawner : MonoBehaviour
                 initialX++;
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
