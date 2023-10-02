@@ -57,8 +57,8 @@
   <ItemGroup>
     <Compile Include="Assets/Scripts/Shared/ObjectDestroyer.cs" />
     <Compile Include="Assets/Scripts/GameManager/GameManager.cs" />
+    <Compile Include="Assets/Scripts/GameManager/EnemiesSpawner.cs" />
     <Compile Include="Assets/Scripts/LoopingBackgroundImage.cs" />
-    <Compile Include="Assets/EnemiesSpawner.cs" />
     <Compile Include="Assets/Scripts/Obstacle/Obstacle.cs" />
     <Compile Include="Assets/Scripts/GameManager/PauseMenuLauncher.cs" />
     <Compile Include="Assets/Scripts/Shared/Constants/SceneBuildIndexes.cs" />
