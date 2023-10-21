@@ -251,4 +251,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotHandler: {fileID: 5941763864819372368}
   bullet: {fileID: 6861898672234932951, guid: bfd30a21a3db48177b675a26fb0dc7ff, type: 3}
-  seconds: 5
+  seconds: 30

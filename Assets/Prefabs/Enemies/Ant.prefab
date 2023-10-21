@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotHandler: {fileID: 3582127908752448123}
   bullet: {fileID: 6861898672234932951, guid: bfd30a21a3db48177b675a26fb0dc7ff, type: 3}
-  seconds: 5
+  seconds: 30
 --- !u!1 &8691026473582329166
 GameObject:
   m_ObjectHideFlags: 0
