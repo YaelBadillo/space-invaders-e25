@@ -12,9 +12,9 @@ public class EnemiesSpawner : MonoBehaviour
     GameObject fly;
     [SerializeField]
     GameObject enemiesContainer;
-    float initialX = -4f;
-    readonly float initialY = 0f;
-    readonly float initialZ = 0f;
+
+    int rows = 2;
+    int numberOfEnemiesPerRow = 2;
 
     void Start()
     {
@@ -26,7 +26,6 @@ public class EnemiesSpawner : MonoBehaviour
         bool hasChildren = false;
         foreach (Transform enemyRow in enemiesContainer.transform)
         {
-            //Debug.Log(enemyRow.name);
             if (enemyRow.childCount > 0)
             {
                 hasChildren = true;
@@ -36,18 +35,38 @@ public class EnemiesSpawner : MonoBehaviour
 
         if (!hasChildren)
         {
+            enemiesContainer.GetComponent<VerticalMovement>().Reset();
+            GenerateNextWave();
             GenerateEnemies();
         }
     }
 
+    void GenerateNextWave()
+    {
+        if (numberOfEnemiesPerRow < 9)
+        {
+            numberOfEnemiesPerRow++;
+        }
+
+        if (numberOfEnemiesPerRow % 2 == 0 && rows < 4)
+        {
+            rows++;
+        }
+
+        GenerateEnemies();
+    }
+
     void GenerateEnemies()
     {
-        int childCount = enemiesContainer.transform.childCount;
-        for (int numberOfEnemyRow = 0; numberOfEnemyRow < childCount; numberOfEnemyRow++)
+        float initialX;
+        float initialY = 0f;
+        float initialZ = 0f;
+
+        for (int numberOfEnemyRow = 0; numberOfEnemyRow < rows; numberOfEnemyRow++)
         {
             Transform enemyRow = enemiesContainer.transform.GetChild(numberOfEnemyRow);
             initialX = -4f;
-            for (int numberOfEnemy = 0; numberOfEnemy < 9; numberOfEnemy++)
+            for (int numberOfEnemy = 0; numberOfEnemy < numberOfEnemiesPerRow; numberOfEnemy++)
             {
                 GameObject enemy = null;
                 if (numberOfEnemyRow == 0)
