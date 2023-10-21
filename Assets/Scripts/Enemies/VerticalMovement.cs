@@ -20,7 +20,7 @@ public class VerticalMovement : MonoBehaviour
         }
     }
 
-    private void Move()
+    void Move()
     {
         Vector2 direction = (destination - objectRigidbody2D.position).normalized;
 
@@ -30,5 +30,12 @@ public class VerticalMovement : MonoBehaviour
             hasArrived = true;
             objectRigidbody2D.velocity = Vector2.zero;
         }
+    }
+
+    public void Reset()
+    {
+        hasArrived = false;
+        objectRigidbody2D.position = new Vector2(9f, 9f);
+        gameObject.transform.position = new Vector2(9f, 9f);
     }
 }
