@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// This script is used to manage the game. Mainly to pause and resume the game.
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     PauseGame pauseGame;

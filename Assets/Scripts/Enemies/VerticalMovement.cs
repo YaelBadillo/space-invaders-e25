@@ -1,10 +1,22 @@
 using UnityEngine;
 
+/// <summary>
+/// This script is used to move down all enemy rows.
+/// </summary>
 public class VerticalMovement : MonoBehaviour
 {
+    /// <summary>
+    /// The destination of the enemies.
+    /// </summary>
     [SerializeField] private Vector2 destination;
+    /// <summary>
+    /// The velocity of the move.
+    /// </summary>
     [SerializeField] private float velocity = 5.0f;
     private Rigidbody2D objectRigidbody2D;
+    /// <summary>
+    /// A boolean to check if the enemies have arrived at their destination.
+    /// </summary>
     private bool hasArrived = false;
 
     void Start()
@@ -20,6 +32,9 @@ public class VerticalMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Moves the enemies to their destination.
+    /// </summary>
     void Move()
     {
         Vector2 direction = (destination - objectRigidbody2D.position).normalized;
@@ -32,6 +47,9 @@ public class VerticalMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Resets the enemies to their starting position.
+    /// </summary>
     public void Reset()
     {
         hasArrived = false;

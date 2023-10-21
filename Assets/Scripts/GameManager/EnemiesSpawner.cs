@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// This script is used to spawn enemies.
+/// </summary>
 public class EnemiesSpawner : MonoBehaviour
 {
     [SerializeField]
@@ -10,10 +13,20 @@ public class EnemiesSpawner : MonoBehaviour
     GameObject ant;
     [SerializeField]
     GameObject fly;
+    /// <summary>
+    /// Container for all row of enemies.
+    /// </summary>
     [SerializeField]
     GameObject enemiesContainer;
 
+    /// <summary>
+    /// Initial number of enemy rows.
+    /// </summary>
     int rows = 2;
+
+    /// <summary>
+    /// Initial number of enemies per row.
+    /// </summary>
     int numberOfEnemiesPerRow = 2;
 
     void Start()
@@ -41,6 +54,9 @@ public class EnemiesSpawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Generates the next wave of enemies.
+    /// </summary>
     void GenerateNextWave()
     {
         if (numberOfEnemiesPerRow < 9)
@@ -56,6 +72,9 @@ public class EnemiesSpawner : MonoBehaviour
         GenerateEnemies();
     }
 
+    /// <summary>
+    /// Generates enemies.
+    /// </summary>
     void GenerateEnemies()
     {
         float initialX;
