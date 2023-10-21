@@ -48,7 +48,7 @@ public class EnemiesSpawner : MonoBehaviour
             numberOfEnemiesPerRow++;
         }
 
-        if (numberOfEnemiesPerRow % 3 == 0 && rows < 4)
+        if (numberOfEnemiesPerRow % 2 == 0 && rows < 4)
         {
             rows++;
         }

@@ -836,6 +836,7 @@ MonoBehaviour:
   ant: {fileID: 6349381160443981880, guid: 16fb856ec2c427c2ba973e025e1aed0b, type: 3}
   fly: {fileID: 9163710743939905474, guid: 05a9e2f73d486ba868e175478d155dd2, type: 3}
   enemiesContainer: {fileID: 779641722}
+  destination: {x: 0, y: 1}
 --- !u!1 &288273678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,6 +1539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 1}
   velocity: 1
+  hasArrived: 0
 --- !u!50 &779641725
 Rigidbody2D:
   serializedVersion: 4

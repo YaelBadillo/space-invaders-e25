@@ -3,14 +3,16 @@ using UnityEngine;
 
 public class EnemyShot : Shot
 {
-    [SerializeField] private int seconds;
+    private float shootEverySeconds;
 
     void Start()
     {
         System.Random random = new System.Random();
-        float secondsBeforeStarting = (float)(random.NextDouble() * 5f);
+        float secondsBeforeStartShooting = (float)(random.NextDouble() * 10f);
+        shootEverySeconds = (float)(random.NextDouble() * 10f);
 
-        Invoke(nameof(StartFire), secondsBeforeStarting);
+
+        Invoke(nameof(StartFire), secondsBeforeStartShooting);
     }
 
     private void StartFire()
@@ -23,7 +25,7 @@ public class EnemyShot : Shot
         while (true)
         {
             Shoot();
-            yield return new WaitForSeconds(seconds);
+            yield return new WaitForSeconds(shootEverySeconds);
         }
     }
 }
