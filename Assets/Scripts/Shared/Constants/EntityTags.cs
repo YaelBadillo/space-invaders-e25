@@ -1,3 +1,6 @@
+/// <summary>
+/// Contains the tags of the entities.
+/// </summary>
 public class EntityTags
 {
     public const string Player = "Player";
