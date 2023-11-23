@@ -6,17 +6,9 @@ using UnityEngine;
 /// </summary>
 public class EnemyShot : Shot
 {
-    /// <summary>
-    /// The seconds between each shot.
-    /// </summary>
-    private float shootEverySeconds;
-
     void Start()
     {
-        System.Random random = new System.Random();
-        float secondsBeforeStartShooting = (float)(random.NextDouble() * 10f);
-        shootEverySeconds = (float)(random.NextDouble() * 10f);
-
+        float secondsBeforeStartShooting = Random.Range(0f, 10f);
 
         Invoke(nameof(StartFire), secondsBeforeStartShooting);
     }
@@ -35,9 +27,11 @@ public class EnemyShot : Shot
     /// <returns></returns>
     private IEnumerator FireEveryFewSeconds()
     {
+        float shootEverySeconds;
         while (true)
         {
             Shoot();
+            shootEverySeconds = Random.Range(0.5f, 5f);
             yield return new WaitForSeconds(shootEverySeconds);
         }
     }
