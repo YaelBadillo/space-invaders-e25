@@ -50,6 +50,7 @@ public class EnemiesSpawner : MonoBehaviour
         {
             enemiesContainer.GetComponent<VerticalMovement>().Reset();
             GenerateNextWave();
+            GetComponent<ObstaclesGenerator>().Generate();
         }
     }
 
@@ -110,7 +111,7 @@ public class EnemiesSpawner : MonoBehaviour
 
                     enemy.GetComponent<EnemyMovement>().Velocity *= difficultyIndex;
                     enemy.GetComponent<EnemyShot>().MaxShootEverySeconds /= difficultyIndex - 0.1f;
-  
+
                     initialX++;
                 }
 

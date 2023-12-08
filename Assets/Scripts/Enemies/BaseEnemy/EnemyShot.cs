@@ -52,7 +52,6 @@ public class EnemyShot : Shot
         {
             Shoot();
             ShootEverySeconds = Random.Range(0.5f, MaxShootEverySeconds);
-            Debug.Log(ShootEverySeconds);
             yield return new WaitForSeconds(ShootEverySeconds);
         }
     }
