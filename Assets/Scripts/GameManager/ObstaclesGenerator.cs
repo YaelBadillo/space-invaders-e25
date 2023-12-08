@@ -19,6 +19,10 @@ public class ObstaclesGenerator : MonoBehaviour
     public void Generate()
     {
         obstaclesContainer.transform.DetachChildren();
+        foreach (Transform child in obstaclesContainer.transform)
+        {
+            Destroy(child.gameObject);
+        }
 
         float initialX = -4.5f;
         float initialY = 0;

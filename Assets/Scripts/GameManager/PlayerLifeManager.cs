@@ -20,6 +20,10 @@ public class PlayerLifeManager : MonoBehaviour
     public void Generate()
     {
         livesContainer.transform.DetachChildren();
+        foreach (Transform child in livesContainer.transform)
+        {
+            Destroy(child.gameObject);
+        }
 
         float initialX = 0f;
         float initialY = 0f;
