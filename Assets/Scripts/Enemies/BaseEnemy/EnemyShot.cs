@@ -20,6 +20,13 @@ public class EnemyShot : Shot
         set { _shootEverySeconds = value; }
     }
 
+    float _maxShootEverySeconds = 10f;
+    public float MaxShootEverySeconds
+    {
+        get { return _maxShootEverySeconds; }
+        set { _maxShootEverySeconds = value; }
+    }
+
     void Start()
     {
         SecondsBeforeStartShooting = Random.Range(2f, 10f);
@@ -44,7 +51,8 @@ public class EnemyShot : Shot
         while (true)
         {
             Shoot();
-            ShootEverySeconds = Random.Range(0.5f, 10f);
+            ShootEverySeconds = Random.Range(0.5f, MaxShootEverySeconds);
+            Debug.Log(ShootEverySeconds);
             yield return new WaitForSeconds(ShootEverySeconds);
         }
     }
