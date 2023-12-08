@@ -111,7 +111,7 @@ public class EnemiesSpawner : MonoBehaviour
                     enemy.transform.localPosition = new Vector2(initialX, initialY);
 
                     enemy.GetComponent<EnemyMovement>().Velocity *= difficultyIndex;
-                    enemy.GetComponent<EnemyShot>().MaxShootEverySeconds /= difficultyIndex - 0.1f;
+                    enemy.GetComponent<EnemyShot>().MaxShootEverySeconds /= difficultyIndex;
 
                     initialX++;
                 }
