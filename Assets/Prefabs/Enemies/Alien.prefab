@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 5764263411496965892}
   - component: {fileID: 2750177280760411072}
   - component: {fileID: 5219034723638568083}
+  - component: {fileID: -5203664753325926399}
   m_Layer: 0
   m_Name: Alien
   m_TagString: Enemy
@@ -220,7 +221,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotHandler: {fileID: 7421448920545405836}
   bullet: {fileID: 6861898672234932951, guid: bfd30a21a3db48177b675a26fb0dc7ff, type: 3}
-  seconds: 30
+--- !u!114 &-5203664753325926399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056255588511582599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e04ae3b0164e88c6938c9b352fbdfdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesContainer: {fileID: 0}
 --- !u!1 &7127143210905203430
 GameObject:
   m_ObjectHideFlags: 0

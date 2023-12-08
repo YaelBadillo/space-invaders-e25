@@ -37,13 +37,9 @@ public class EnemiesSpawner : MonoBehaviour
     void Update()
     {
         bool hasChildren = false;
-        foreach (Transform enemyRow in enemiesContainer.transform)
+        if (enemiesContainer.transform.childCount > 0)
         {
-            if (enemyRow.childCount > 0)
-            {
-                hasChildren = true;
-                break;
-            }
+            hasChildren = true;
         }
 
         if (!hasChildren)
@@ -83,34 +79,15 @@ public class EnemiesSpawner : MonoBehaviour
 
         for (int numberOfEnemyRow = 0; numberOfEnemyRow < rows; numberOfEnemyRow++)
         {
-            Transform enemyRow = enemiesContainer.transform.GetChild(numberOfEnemyRow);
             initialX = -4f;
             for (int numberOfEnemy = 0; numberOfEnemy < numberOfEnemiesPerRow; numberOfEnemy++)
             {
-                GameObject enemy = null;
-                if (numberOfEnemyRow == 0)
-                {
-                    enemy = Instantiate(alien, enemyRow);
-                }
-
-                if (numberOfEnemyRow == 1)
-                {
-                    enemy = Instantiate(snail, enemyRow);
-                }
-
-                if (numberOfEnemyRow == 2)
-                {
-                    enemy = Instantiate(ant, enemyRow);
-                }
-
-                if (numberOfEnemyRow == 3)
-                {
-                    enemy = Instantiate(fly, enemyRow);
-                }
+                GameObject enemy = Instantiate(alien, enemiesContainer.transform);
 
                 enemy.transform.localPosition = new Vector3(initialX, initialY, initialZ);
                 initialX++;
             }
+            initialY++;
         }
     }
 }
