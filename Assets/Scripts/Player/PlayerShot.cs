@@ -5,6 +5,11 @@ using UnityEngine;
 /// </summary>
 public class PlayerShot : Shot
 {
+    void Start()
+    {
+        audioSource = shotHandler.GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

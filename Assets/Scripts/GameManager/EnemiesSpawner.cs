@@ -29,6 +29,10 @@ public class EnemiesSpawner : MonoBehaviour
     /// </summary>
     int numberOfEnemiesPerRow = 2;
 
+    int numberOfWaves = 0;
+
+    float difficultyIndex = 1f;
+
     void Start()
     {
         GenerateEnemies();
@@ -37,20 +41,17 @@ public class EnemiesSpawner : MonoBehaviour
     void Update()
     {
         bool hasChildren = false;
-        foreach (Transform enemyRow in enemiesContainer.transform)
+        if (enemiesContainer.transform.childCount > 0)
         {
-            if (enemyRow.childCount > 0)
-            {
-                hasChildren = true;
-                break;
-            }
+            hasChildren = true;
         }
 
         if (!hasChildren)
         {
             enemiesContainer.GetComponent<VerticalMovement>().Reset();
             GenerateNextWave();
-            GenerateEnemies();
+            GetComponent<ObstaclesGenerator>().Generate();
+            GetComponent<PlayerLifeManager>().Generate();
         }
     }
 
@@ -59,17 +60,20 @@ public class EnemiesSpawner : MonoBehaviour
     /// </summary>
     void GenerateNextWave()
     {
-        if (numberOfEnemiesPerRow < 9)
+        numberOfWaves++;
+
+        if (numberOfWaves % 3 == 0 && numberOfEnemiesPerRow < 9)
         {
             numberOfEnemiesPerRow++;
         }
 
-        if (numberOfEnemiesPerRow % 2 == 0 && rows < 4)
+        if (numberOfWaves % 5 == 0 && rows < 4)
         {
             rows++;
         }
 
         GenerateEnemies();
+        difficultyIndex += 0.2f;
     }
 
     /// <summary>
@@ -79,38 +83,41 @@ public class EnemiesSpawner : MonoBehaviour
     {
         float initialX;
         float initialY = 0f;
-        float initialZ = 0f;
-
         for (int numberOfEnemyRow = 0; numberOfEnemyRow < rows; numberOfEnemyRow++)
         {
-            Transform enemyRow = enemiesContainer.transform.GetChild(numberOfEnemyRow);
             initialX = -4f;
             for (int numberOfEnemy = 0; numberOfEnemy < numberOfEnemiesPerRow; numberOfEnemy++)
             {
                 GameObject enemy = null;
                 if (numberOfEnemyRow == 0)
                 {
-                    enemy = Instantiate(alien, enemyRow);
+                    enemy = Instantiate(alien, enemiesContainer.transform);
                 }
-
-                if (numberOfEnemyRow == 1)
+                else if (numberOfEnemyRow == 1)
                 {
-                    enemy = Instantiate(snail, enemyRow);
+                    enemy = Instantiate(snail, enemiesContainer.transform);
                 }
-
-                if (numberOfEnemyRow == 2)
+                else if (numberOfEnemyRow == 2)
                 {
-                    enemy = Instantiate(ant, enemyRow);
+                    enemy = Instantiate(ant, enemiesContainer.transform);
                 }
-
-                if (numberOfEnemyRow == 3)
+                else if (numberOfEnemyRow == 3)
                 {
-                    enemy = Instantiate(fly, enemyRow);
+                    enemy = Instantiate(fly, enemiesContainer.transform);
                 }
 
-                enemy.transform.localPosition = new Vector3(initialX, initialY, initialZ);
-                initialX++;
+                if (enemy != null)
+                {
+                    enemy.transform.localPosition = new Vector2(initialX, initialY);
+
+                    enemy.GetComponent<EnemyMovement>().Velocity *= difficultyIndex;
+                    enemy.GetComponent<EnemyShot>().MaxShootEverySeconds /= difficultyIndex;
+
+                    initialX++;
+                }
+
             }
+            initialY++;
         }
     }
 }
