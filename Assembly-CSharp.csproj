@@ -81,6 +81,7 @@
     <Compile Include="Assets/Scripts/Player/DeathManager.cs" />
     <Compile Include="Assets/Scripts/GameManager/ObstaclesGenerator.cs" />
     <Compile Include="Assets/Scripts/Shared/Constants/EntityTags.cs" />
+    <Compile Include="Assets/Scripts/GameManager/PlayerLifeManager.cs" />
     <Compile Include="Assets/InputSystem/PlayerActions.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerMovement.cs" />
     <Compile Include="Assets/Scripts/Menus/GameLauncher.cs" />

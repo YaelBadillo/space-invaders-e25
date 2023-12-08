@@ -51,6 +51,7 @@ public class EnemiesSpawner : MonoBehaviour
             enemiesContainer.GetComponent<VerticalMovement>().Reset();
             GenerateNextWave();
             GetComponent<ObstaclesGenerator>().Generate();
+            GetComponent<PlayerLifeManager>().Generate();
         }
     }
 

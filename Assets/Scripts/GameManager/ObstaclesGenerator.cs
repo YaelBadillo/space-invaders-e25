@@ -18,8 +18,11 @@ public class ObstaclesGenerator : MonoBehaviour
 
     public void Generate()
     {
+        obstaclesContainer.transform.DetachChildren();
+
         float initialX = -4.5f;
         float initialY = 0;
+
         for (int i = 0; i < numberOfObstacles; i++)
         {
             GameObject obstacle = Instantiate(obstaclePrefab, obstaclesContainer.transform) as GameObject;
