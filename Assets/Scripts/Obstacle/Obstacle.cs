@@ -43,8 +43,6 @@ public class Obstacle : Entity
     void Update()
     {
         float percentage = Existence / totalEndurance;
-        Debug.Log(percentage);
-        Debug.Log(endurance);
         if (percentage <= 0.25f)
         {
             obstacleSprite.GetComponent<SpriteRenderer>().sprite = brownSprite;

@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -29,6 +30,8 @@ public class EnemyShot : Shot
 
     void Start()
     {
+        audioSource = shotHandler.GetComponent<AudioSource>();
+
         SecondsBeforeStartShooting = Random.Range(2f, 10f);
 
         Invoke(nameof(StartFire), SecondsBeforeStartShooting);
