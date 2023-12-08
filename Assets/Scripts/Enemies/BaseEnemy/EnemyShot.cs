@@ -6,11 +6,25 @@ using UnityEngine;
 /// </summary>
 public class EnemyShot : Shot
 {
+    float _secondsBeforeStartShooting = 0f;
+    public float SecondsBeforeStartShooting
+    {
+        get { return _secondsBeforeStartShooting; }
+        set { _secondsBeforeStartShooting = value; }
+    }
+
+    float _shootEverySeconds = 0f;
+    public float ShootEverySeconds
+    {
+        get { return _shootEverySeconds; }
+        set { _shootEverySeconds = value; }
+    }
+
     void Start()
     {
-        float secondsBeforeStartShooting = Random.Range(0f, 10f);
+        SecondsBeforeStartShooting = Random.Range(2f, 10f);
 
-        Invoke(nameof(StartFire), secondsBeforeStartShooting);
+        Invoke(nameof(StartFire), SecondsBeforeStartShooting);
     }
 
     /// <summary>
@@ -27,12 +41,11 @@ public class EnemyShot : Shot
     /// <returns></returns>
     private IEnumerator FireEveryFewSeconds()
     {
-        float shootEverySeconds;
         while (true)
         {
             Shoot();
-            shootEverySeconds = Random.Range(0.5f, 5f);
-            yield return new WaitForSeconds(shootEverySeconds);
+            ShootEverySeconds = Random.Range(0.5f, 10f);
+            yield return new WaitForSeconds(ShootEverySeconds);
         }
     }
 }
