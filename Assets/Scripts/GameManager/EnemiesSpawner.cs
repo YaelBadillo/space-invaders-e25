@@ -29,6 +29,10 @@ public class EnemiesSpawner : MonoBehaviour
     /// </summary>
     int numberOfEnemiesPerRow = 2;
 
+    int numberOfWaves = 0;
+
+    float difficultyIndex = 1f;
+
     void Start()
     {
         GenerateEnemies();
@@ -46,7 +50,6 @@ public class EnemiesSpawner : MonoBehaviour
         {
             enemiesContainer.GetComponent<VerticalMovement>().Reset();
             GenerateNextWave();
-            GenerateEnemies();
         }
     }
 
@@ -55,17 +58,20 @@ public class EnemiesSpawner : MonoBehaviour
     /// </summary>
     void GenerateNextWave()
     {
-        if (numberOfEnemiesPerRow < 9)
+        numberOfWaves++;
+
+        if (numberOfWaves % 3 == 0 && numberOfEnemiesPerRow < 9)
         {
             numberOfEnemiesPerRow++;
         }
 
-        if (numberOfEnemiesPerRow % 2 == 0 && rows < 4)
+        if (numberOfWaves % 5 == 0 && rows < 4)
         {
             rows++;
         }
 
         GenerateEnemies();
+        difficultyIndex += 0.2f;
     }
 
     /// <summary>
@@ -75,17 +81,38 @@ public class EnemiesSpawner : MonoBehaviour
     {
         float initialX;
         float initialY = 0f;
-        float initialZ = 0f;
-
         for (int numberOfEnemyRow = 0; numberOfEnemyRow < rows; numberOfEnemyRow++)
         {
             initialX = -4f;
             for (int numberOfEnemy = 0; numberOfEnemy < numberOfEnemiesPerRow; numberOfEnemy++)
             {
-                GameObject enemy = Instantiate(alien, enemiesContainer.transform);
+                GameObject enemy = null;
+                if (numberOfEnemyRow == 0)
+                {
+                    enemy = Instantiate(alien, enemiesContainer.transform);
+                }
+                else if (numberOfEnemyRow == 1)
+                {
+                    enemy = Instantiate(snail, enemiesContainer.transform);
+                }
+                else if (numberOfEnemyRow == 2)
+                {
+                    enemy = Instantiate(ant, enemiesContainer.transform);
+                }
+                else if (numberOfEnemyRow == 3)
+                {
+                    enemy = Instantiate(fly, enemiesContainer.transform);
+                }
 
-                enemy.transform.localPosition = new Vector3(initialX, initialY, initialZ);
-                initialX++;
+                if (enemy != null)
+                {
+                    enemy.transform.localPosition = new Vector2(initialX, initialY);
+
+                    enemy.GetComponent<EnemyMovement>().Velocity *= difficultyIndex;
+
+                    initialX++;
+                }
+
             }
             initialY++;
         }
