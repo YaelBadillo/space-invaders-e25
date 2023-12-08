@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
         set { _isMovingToTheRight = value; }
     }
 
-    private Vector2 _direction = Vector2.right;
+    private static Vector2 _direction = Vector2.right;
 
     private Vector2 Direction
     {
@@ -24,7 +24,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     [SerializeField] private float _velocity = 5.0f;
-    private float Velocity
+    public float Velocity
     {
         get { return _velocity; }
         set { _velocity = value; }
@@ -47,24 +47,13 @@ public class EnemyMovement : MonoBehaviour
 
         if (transform.position.x < leftLimit || transform.position.x > rightLimit)
         {
-            for (int enemiesIndex = 0; enemiesIndex < enemiesContainer.transform.childCount; enemiesIndex++)
+            if (Direction == Vector2.left)
             {
-                Transform currentEnemy = enemiesContainer.transform.GetChild(enemiesIndex);
-
-                EnemyMovement currentEnemyMovement = currentEnemy.GetComponent<EnemyMovement>();
-
-                Vector2 currentEnemyDirection = currentEnemyMovement.Direction;
-                bool isCurrentEnemyMovingToTheRight = currentEnemyMovement.IsMovingToTheRight;
-                if (isCurrentEnemyMovingToTheRight == false && currentEnemyDirection == Vector2.left)
-                {
-                    currentEnemyMovement.Direction = Vector2.right;
-                    currentEnemyMovement.IsMovingToTheRight = true;
-                }
-                else if (isCurrentEnemyMovingToTheRight == true && currentEnemyDirection == Vector2.right)
-                {
-                    currentEnemyMovement.Direction = Vector2.left;
-                    currentEnemyMovement.IsMovingToTheRight = false;
-                }
+                Direction = Vector2.right;
+            }
+            else if (Direction == Vector2.right)
+            {
+                Direction = Vector2.left;
             }
         }
     }
